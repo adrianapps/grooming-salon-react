@@ -17,7 +17,7 @@ export default function VisitPage() {
   return (
     <div className="container mx-auto p-8">
       <VisitForm />
-      <VisitTable visits={visits} />
+      <VisitTable visits={visits} showDeleteButton={true}/>
     </div>
   );
 }

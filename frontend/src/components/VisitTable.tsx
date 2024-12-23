@@ -5,13 +5,15 @@ import { useQueryClient, useMutation } from "@tanstack/react-query";
 interface VisitTableProp {
   visits: Visit[];
   showDeleteButton: boolean;
-  isFutureVisit: (date: string) => boolean;
+}
+
+function isFutureVisit(date: string): boolean {
+  return new Date(date) > new Date();
 }
 
 export default function VisitTable({
   visits,
   showDeleteButton,
-  isFutureVisit,
 }: VisitTableProp) {
   const queryClient = useQueryClient();
 
@@ -31,6 +33,7 @@ export default function VisitTable({
             <th className="px-4 py-2 text-left">Pies</th>
             <th className="px-4 py-2 text-left">Serwisy</th>
             <th className="px-4 py-2 text-left">Data</th>
+            <th className="px-4 py-2 text-center">Opis</th>
             <th className="px-4 py-2 text-center"></th>
           </tr>
         </thead>
@@ -71,6 +74,8 @@ export default function VisitTable({
               <td className="px-4 py-2">
                 {new Date(visit.date).toLocaleString()}
               </td>
+
+              <td className="px-4 py-2">{visit.description}</td>
 
               {/* Delete Button */}
               <td className="px-4 py-2 text-center">
