@@ -7,8 +7,7 @@ const fetchDogs = async (): Promise<Dog[]> => {
 };
 
 const deleteDog = async (dogId: number) => {
-  const response = await api.delete(`/api/dogs/${dogId}/`);
-  return response.data;
+  await api.delete(`/api/dogs/${dogId}/`);
 };
 
 const addDog = async (data: FormData): Promise<Dog> => {

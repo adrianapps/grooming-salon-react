@@ -53,7 +53,7 @@ export default function DogTable({ dogs }: DogTableProps) {
               <td className="px-4 py-2">{dog.age}</td>
               <td className="px-4 py-2 text-center">
                 <Link
-                  to={`/dogs-visits/${dog.id}`}
+                  to={`/psy/${dog.id}/wizyty`}
                   className="btn btn-ghost btn-xs"
                 >
                   Details

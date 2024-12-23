@@ -12,11 +12,10 @@ const addVisit = async (data: FormData): Promise<Visit> => {
 };
 
 const deleteVisit = async (visitId: number) => {
-  const response = await api.delete(`/api/visits/${visitId}/`);
-  return response.data;
+  await api.delete(`/api/visits/${visitId}/`);
 };
 
-const fetchDogVisits = async (dogId: number): Promise<Visit> => {
+const fetchDogVisits = async (dogId: string | undefined): Promise<Visit[]> => {
   const response = await api.get(`/api/dogs/${dogId}/visits/`);
   return response.data;
 };
