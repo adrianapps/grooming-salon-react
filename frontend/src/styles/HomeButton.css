@@ -1,0 +1,15 @@
+button {
+    border-radius: 0.375rem;
+    padding: 1rem 2rem;
+    font-size: 1.25rem;
+    background-color: #f09a7a;
+    border: 0px;
+    flex-grow: 1;
+    height: 500px;
+}
+
+button:hover {
+    background-color: #e67e22;
+    cursor: pointer;
+}
+  
